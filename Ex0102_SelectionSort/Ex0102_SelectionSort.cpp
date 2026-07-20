@@ -13,6 +13,13 @@ struct Element
 bool CheckSorted(int* arr, int size)
 {
 	// TODO: 정렬 확인 함수 구현
+	for (int i = 0; i < size - 1; i++)
+	{
+		// cout << endl << i << " " << arr[i] << " " << arr[i + 1] << endl;
+
+		if (arr[i] > arr[i + 1])
+			return false;
+	}
 
 	return true;
 }
@@ -53,6 +60,14 @@ int main()
 					cout << " -> " << flush;
 
 					//TODO: 정렬 해보기
+					for (int j = 0; j < size - 1; j++)
+					{
+						for (int i = 0; i < size - 1 - j; i++)
+						{
+							if (arr[i] > arr[i + 1])
+								swap(arr[i], arr[i + 1]);
+						}
+					}
 
 					for (int e = 0; e < size; e++) {
 						cout << arr[e] << " " << flush;
